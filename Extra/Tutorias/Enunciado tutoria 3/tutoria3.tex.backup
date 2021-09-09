@@ -1,0 +1,52 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+%opening
+\title{Tutoría 3 - Estructuras de datos y algoritmos}
+\author{Cristóbal Ganter y Felipe Vera}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{¡Aviso!} ¡Recuerde dejar la máquina virtual en orden una vez que termine su trabajo!
+¡Pregunte al ayudante apenas tenga una duda!
+
+Si tiene problemas de \textit{segmentation fault} en su programa, una buena opción es \textit{debuggear} su programa con el comando \texttt{ddd nombre-de-programa}.
+Estos errores son difíciles de encontrar, por lo que llenar su programa de \texttt{printf}s no lo ayudará mucho.
+
+\paragraph{Contenido de esta semana}
+\begin{itemize}
+  \item punteros, punteros dobles y operador \&
+  \item Asignación dinámica de memoria: stack, heap, \texttt{malloc} y \texttt{free}.
+  \item Estructuras de datos dinámicas: listas doblemente enlazadas, inserción en la cola, inserción en la posición especificada, búsqueda.
+  \item Empleo de funciones recursivas para los contenidos anteriores.
+\end{itemize}
+
+\paragraph{Actividad}
+\begin{enumerate}
+  \item Listas doblemente enlazadas.
+  \begin{enumerate}
+    \item Se desea modelar la fila frente a la caja de un banco. Cree una estructura llamada \texttt{persona} que represente a una persona en la fila. La estructura debe permitir construir
+	  una lista doblemente enlazada, con los atributos \texttt{struct persona *prev, *next}, su \texttt{edad} y la \textbf{cantidad de \texttt{dinero} que traen}.
+    \item En su función \texttt{main} cree un puntero a la primera persona de la fila, esto es la persona que está más cerca de la caja. ¿Hacia donde apuntará este
+	  puntero si aún no hemos creado personas?
+    \item Escriba una función que le permita crear personas. Las personas deben ser creadas con edad aleatoria entre 18 y 200 años y cantidad de dinero aleatoria entre
+	  0 y $2^{32}$ unidades monetarias. ¿De qué tipo tiene que ser la variable usada para almacenar la cantidad de dinero?
+  \end{enumerate}
+  \item Inserción al final de la lista
+  \begin{enumerate}
+    \item Escriba una función \texttt{void ins\_persona (persona **final, persona *nuevo\_elemento)} que le permita insertar personas al final de la fila.
+    \item En su función \texttt{main} cree un un bucle \texttt{while} que se ejecute una vez cada 10 segundos. Si tiene problemas utilizando la función
+	  \texttt{sleep} avise inmediatamente a su ayudante!
+    \item Al comenzar el bucle \texttt{while} debe eliminarse a la primera persona de la fila. Esto simulará al usuario que acaba de ser atendido y sale de la fila.
+	  La memoria que ocupa este usuario debe ser liberada.
+  \end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}

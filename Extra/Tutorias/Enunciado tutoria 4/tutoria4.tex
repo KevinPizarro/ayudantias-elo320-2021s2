@@ -1,0 +1,72 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fullpage}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+   \pdffalse
+\else
+   \pdfoutput=1
+   \pdftrue
+\fi
+\ifpdf
+   \usepackage{graphicx}
+   \usepackage{epstopdf}
+   \DeclareGraphicsRule{.eps}{pdf}{.pdf}{`epstopdf #1}
+   \pdfcompresslevel=9
+\else
+   \usepackage{graphicx}
+\fi
+
+%opening
+\title{Tutoría 4 - Estructuras de datos y algoritmos}
+\author{Cristóbal Ganter y Felipe Vera}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{¡Aviso!} ¡Recuerde dejar la máquina virtual en orden una vez que termine su trabajo!
+¡Pregunte al ayudante apenas tenga una duda!
+
+Si tiene problemas de \textit{segmentation fault} o \textit{stack overflow} en su programa, una buena opción es \textit{debuggear} su programa con el comando \texttt{ddd nombre-de-programa}.
+Estos errores son difíciles de encontrar, por lo que llenar su programa de \texttt{printf}s no lo ayudará mucho.
+
+\paragraph{Contenido de esta semana}
+\begin{itemize}
+  \item punteros, punteros dobles y operador \&
+  \item Asignación dinámica de memoria: stack, heap, \texttt{malloc} y \texttt{free}.
+  \item Estructuras de datos dinámicas: árboles binarios y operaciones con ellos: búsqueda e inserción.
+  \item Empleo de funciones recursivas para los contenidos anteriores.
+\end{itemize}
+
+\paragraph{Actividad}
+\begin{enumerate}
+	\item \textbf{Creación de un árbol binario de búsqueda}
+	El árbol binario de búsqueda, es un método efectivo para ordenar elementos de una lista y acceder a ellos usando memoria dinámica.
+	En este caso, se desea ordenar un grupo de personas según su edad.
+
+	\begin{enumerate}
+		\item Cree una estructura que permita construir un árbol binario de búsqueda. La estructura además debe poder guardar el nombre y la edad de una persona.
+		\item En su función \texttt{main} permita al usuario ingresar nombres de personas y sus respectivas edades. Cada par nombre edad debe guardarse en una estructura
+			y cada estructura debe insertarse en un árbol binario de búsqueda (ABB). \textit{El ABB debe estar ordenado según edad.}
+	\end{enumerate}
+
+	\item \textbf{Acceso a los ítemes del árbol binario. Recorrer el árbol en orden ascendente}
+	Mediante una función recursiva, se puede obtener todos los nodos de árbol de búsqueda de forma ordenada.
+
+	\begin{enumerate}
+		\item Escriba una función recursiva que recorra el ABB ascendentemente imprimiendo el \textbf{nombre} de cada persona.
+		\item Escriba una función idéntica a la anterior que, en vez de imprimir cada nodo, lo guarde en un archivo binario utilizando la función \texttt{fwrite}.
+		\item Llame a la función del punto 2.b. desde su función \texttt{main}.
+	\end{enumerate}
+
+	\item \textbf{Manejo de archivos: Cargar el árbol guardado}
+	
+
+\end{enumerate}
+
+\end{document}

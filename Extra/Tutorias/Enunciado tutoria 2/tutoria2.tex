@@ -1,0 +1,81 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fullpage}
+
+%opening
+\title{Tutoría 2: Estructuras de Datos}
+\author{Cristóbal Ganther, Felipe Vera}
+
+\begin{document}
+
+\maketitle
+
+Los contenidos que se verán en esta tutoría serán los siguientes.
+\begin{itemize}
+  \item Punteros, punteros dobles, paso por valor, paso por referencia y operador \texttt{\&}.
+  \item Elaborar nuevos tipos de datos: \texttt{typedef} y \texttt{struct}.
+  \item Reservar memoria en el \textit{heap}: \texttt{stack}, \texttt{heap}, \texttt{malloc} y \texttt{free}.
+  \item Ingresar datos en consola: \texttt{scanf}
+  \item Manejar estructuras de datos dinámicas: listas, inserción en la cabeza, inserción en la cola, inserción en la posición
+  especificada, búsqueda, eliminación.
+\end{itemize}
+
+\paragraph{Instrucciones}
+\begin{enumerate}
+  \item Introducción a listas enlazadas.
+  \begin{enumerate}
+    \item Cree una estructura llamada \texttt{s\_product} cuyos miembros sean: \texttt{name}, \texttt{trademark}, \texttt{amount} y \texttt{next}.
+	  Los miembros \texttt{name} y \texttt{trademark} deben ser de tipo \texttt{(char*);} El miembro next debe ser de tipo \texttt{(struct s\_product *)}. 
+    \item Redefina el nombre del tipo de forma que se pueda referir al struct con el identificador \texttt{product}. (Note que anidar las sentencias typedef y struct no es recomendado por el estándar de codificación GNU). 
+    \item Finalmente defina una función con prototipo: \texttt{product * new\_product (char * name, char * trademark, int amount)}. La nueva
+	  estructura y sus miembros deben estar almacenados en \textit{HEAP}. Ayúdese de la función \texttt{strdup} para copiar los strings entregados
+	  a su función. ¿A dónde tiene que apuntar \texttt{next} en los nodos recién creados?
+  \end{enumerate}
+
+  \item Insertando nodos al comienzo de la lista.
+  \begin{enumerate}
+    \item Defina una función con prototipo: \texttt{push (product ** list, product * prod)}. Esta función debe agregar el producto \texttt{prod}
+	  al comienzo de la lista \texttt{list}. Procure que su función funcione correctamente si alguno de los parámetros es \texttt{NULL}.
+  \end{enumerate}
+
+  \item Interfaz de usuario y \texttt{scanf}.
+  \begin{enumerate}
+    \item En su función \texttt{main} permita que el usuario pueda agregar productos a una lista usando \texttt{scanf}.
+    \item Una vez que el usuario termine de ingresar los productos, muestre la lista de todos los productos por pantalla. No necesita imprimir
+	  todos los miembros de cada nodo.
+  \end{enumerate}
+
+  \item Lectura básica de una lista.
+  \begin{enumerate}
+    \item Defina una función con prototipo: \texttt{product * get (product * list, int number)}. Esta función debe retornar el nodo en la posición
+	  \texttt{number} de la lista \texttt{list}.
+    \item Una vez que el usuario termine de ingresar los productos, permita que éste pueda hacer consultas utilizando la función definida en
+	  el punto \textsl{(4a)}.
+  \end{enumerate}
+
+  \item Inserciones
+  \begin{enumerate}
+    \item Defina una función con prototipo: \texttt{insert (product ** list, product * prod, int number)}. Esta función debe insertar un producto
+	  \texttt{prod} en la posición \texttt{number} de la lista \texttt{list}. ¡Ponga atención a los casos extremos!
+    \item Permita al usuario insertar elementos a la lista.
+  \end{enumerate}
+
+  \item Salida del programa y limpieza de memoria.
+  \begin{enumerate}
+    \item Permita que el usuario pueda salir del programa.
+    \item Defina una función con prototipo: \texttt{delete (product ** list, int number)}. Esta función debe eliminar el elemento \texttt{number}
+	  de la lista list y de el \textit{HEAP} (función \texttt{free}). Recuerde que también los miembros \texttt{name} y \texttt{trademark}
+	  están almacenados en \textit{HEAP}.
+    \item Haga que antes de salir se eliminen todos los elementos en \texttt{HEAP}.
+  \end{enumerate}
+
+  ¡Recuerde dejar la máquina virtual en orden una vez que termine su trabajo!
+  
+  \textbf{¡Pregunte apenas tenga una duda!}
+
+
+\end{enumerate}
+
+
+\end{document}
