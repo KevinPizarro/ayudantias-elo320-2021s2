@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#define SIZE 50000
 
 void insertionSort(short int arr[], int n)
 {
@@ -34,7 +34,7 @@ void printArray(short int arr[], int n)
 /* Driver program to test insertion sort */
 int main()
 {
-	short int arr[1000000];
+	short int arr[SIZE];
 	int n = sizeof(arr) / sizeof(arr[0]);
 
 	clock_t begin = clock();

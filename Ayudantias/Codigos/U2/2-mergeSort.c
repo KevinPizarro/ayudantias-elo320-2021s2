@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define SIZE 50000
 
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
@@ -84,7 +85,7 @@ void printArray(int A[], int size)
 /* Driver code */
 int main()
 {
-	short int arr[1000000];
+	short int arr[SIZE];
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
 	
 	clock_t begin = clock();
